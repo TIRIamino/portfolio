@@ -1,10 +1,30 @@
 <h1>INDEX | RESTAURANTS</h1>
+<!-- app/views/pages/home.html.erb -->
+<form action="/restaurants" method="get">
+  <input type="text" name="food_type" placeholder="What kind of food?">
+  <input type="submit">
+</form>
 
+<%= link_to "Le Wagon", "https://www.lewagon.com/fr" %>
+
+<!-- TODO : list restaurants. -->
 <ul>
   <% @restaurants.each do |id, restaurant| %>
     <li><%= restaurant[:name] %> (<%= restaurant[:address] %>)</li>
+    <%= link_to restaurant[:name], restaurant_path(id) %>
   <% end %>
 </ul>
 
+<p>Now is <%= Time.now%></p>
+
+
+<% categories = [ 'japanese', 'indian', 'french'] %>
+
+<h2>Find lots of restaurants</h2>
+<ol>
+  <% categories.each do | category| %>
+  <li><%= category.capitalize%></li>
+<% end %>
+</ol>
 
 

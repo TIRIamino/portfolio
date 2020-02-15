@@ -1,1 +1,10 @@
 <h1>HOME PAGE</h1>
+
+<!-- app/views/pages/home.html.erb -->
+<form action="/restaurants" method="post">
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  <input type="text" name="name" placeholder="Name">
+  <input type="text" name="address" placeholder="Address">
+  <input type="text" name="category" placeholder="Category > Tacos">
+  <input type="submit">
+</form>
